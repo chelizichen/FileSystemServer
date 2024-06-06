@@ -31,7 +31,7 @@ pfms，中文名称：私人文件管理系统，它是基于 [EasyFS](https://g
 ## 使用指南
 配置文件中以下两个参数标识管理员账号和密码：
 > admin.uname=root  
-  admin.pwd=123  
+  admin.pwd=123   
   
 PS: 如果是图片、音频、视频、pdf、网页、文本类型的文件会在浏览器直接打开，其他类型弹出下载框。
 
@@ -44,8 +44,3 @@ fs.uuidName：文件是否使用uuid命名
 fs.useSm：文件是否生成缩略图  
 fs.useNginx：文件是否使用nginx做转发  
 fs.nginxUrl：nginx服务器地址
-
-## Other
-1、👏欢迎访问最近开发的助手网站：[维斯小助手🚀🚀](https://weisizhushou.com)
-
-2、如有其他问题可联系qq：3080435357或者微信：M87X2z
