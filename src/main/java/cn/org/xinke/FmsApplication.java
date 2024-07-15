@@ -3,8 +3,9 @@ package cn.org.xinke;
 import cn.org.xinke.framework.EnableSgridServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableSgridServer
 public class FmsApplication {
 

@@ -1,5 +1,6 @@
 package cn.org.xinke.framework;
 
+import lombok.Setter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -19,7 +20,9 @@ public class SgridConf {
     private static final String SGRID_CONFIG = "SGRID_CONFIG";
     private static final String SGRID_PROCESS_INDEX = "SGRID_PROCESS_INDEX";
 
+    @Setter
     public Server server;
+    @Setter
     public HashMap<String, String> config = new HashMap<>();
 
     @PostConstruct
@@ -29,12 +32,13 @@ public class SgridConf {
             // 这一步必须要执行
             this.SetSgridConf();
             // 这一步选执行，只是提供参考设置的样例代码 ！
-            this.SetDBProperty(
-                    config.get("mysql-addr"),
-                    config.get("mysql-username"),
-                    config.get("mysql-password")
-                );
+//            this.SetDBProperty(
+//                    get("mysql-addr"),
+//                    get("mysql-username"),
+//                    get("mysql-password")
+//            );
         }
+
     }
 
     @Bean
@@ -46,13 +50,13 @@ public class SgridConf {
     @Override
     public String toString() {
         return (
-            "SgridConf [server=" +
-            server +
-            ", config=" +
-            config +
-            ", isConfigured=" +
-            isConfigured +
-            "]"
+                "SgridConf [server=" +
+                        server +
+                        ", config=" +
+                        config +
+                        ", isConfigured=" +
+                        isConfigured +
+                        "]"
         );
     }
 
@@ -89,17 +93,9 @@ public class SgridConf {
             }
         } catch (Exception e) {
             System.err.println(
-                "[Sgrid-Java] [error] Error Init SetSgridConf " + e
+                    "[Sgrid-Java] [error] Error Init SetSgridConf " + e
             );
         }
-    }
-
-    public void setServer(Server server) {
-        this.server = server;
-    }
-
-    public void setConfig(HashMap<String, String> config) {
-        this.config = config;
     }
 
     public boolean threadLock() {
@@ -110,7 +106,8 @@ public class SgridConf {
         return true;
     }
 
-    public String get(String path){
+    public String get(String path) {
         return config.get(path);
     }
+
 }
